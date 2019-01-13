@@ -1,4 +1,4 @@
-require('./models/db');
+//require('./models/db');
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -6,6 +6,7 @@ const port = process.env.PORT || 3000;
 const path = require('path');
 const exphs = require('express-handlebars');
 const employeeController = require('./controller/employeeController');
+mongoose.connect(config.getDbConnectionString(),{ useNewUrlParser: true });
 var app = express();
 app.set('views',path.join(__dirname,'/views/'));
 app.use(bodyParser.urlencoded({extended : true}));

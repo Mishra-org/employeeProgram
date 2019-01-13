@@ -23,7 +23,7 @@ var employeeSchema = new mongoose.Schema({
         type : String,
         required : 'this field is required'
     }
-},{collection : 'employeedb'});
+}/*,{collection : 'employeedb'}*/);
 
 // Custom validation for email
 employeeSchema.path('email').validate((val) => {
