@@ -1,11 +1,12 @@
 //require('./models/db');
-
+const mongoose = require('mongoose');
 const express = require('express');
 const bodyParser = require('body-parser');
 const port = process.env.PORT || 3000;
 const path = require('path');
 const exphs = require('express-handlebars');
 const employeeController = require('./controller/employeeController');
+const config = require('./config/index.js');
 mongoose.connect(config.getDbConnectionString(),{ useNewUrlParser: true });
 var app = express();
 app.set('views',path.join(__dirname,'/views/'));
